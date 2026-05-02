@@ -12,8 +12,11 @@ import {
 } from "@/once-ui/components";
 import { baseURL } from "@/app/resources";
 import TableOfContents from "@/components/about/TableOfContents";
+import dynamic from "next/dynamic";
 import styles from "@/components/about/about.module.scss";
 import { person, about, social } from "@/app/resources/content";
+
+const WhatsAppButton = dynamic(() => import("@/components/WhatsAppButton"), { ssr: false });
 
 export async function generateMetadata() {
   const title = about.title;
@@ -255,7 +258,7 @@ export default function About() {
                               enlarge
                               radius="m"
                               //@ts-ignore
-                              sizes={image.width.toString()}
+                              sizes={image.width?.toString() || "100%"}
                               //@ts-ignore
                               alt={image.alt}
                               //@ts-ignore
@@ -324,7 +327,7 @@ export default function About() {
                               enlarge
                               radius="m"
                               //@ts-ignore
-                              sizes={image.width.toString()}
+                              sizes={image.width?.toString() || "100%"}
                               //@ts-ignore
                               alt={image.alt}
                               //@ts-ignore
@@ -339,6 +342,8 @@ export default function About() {
               </Column>
             </>
           )}
+            {/* Client-side WhatsApp button loaded dynamically */}
+            <WhatsAppButton phoneNumber="+0000000000" />
         </Column>
       </Flex>
     </Column>

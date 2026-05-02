@@ -27,7 +27,7 @@ export default function WhatsAppButton({
       style={{
         position: 'fixed',
         right: '30px',
-        bottom: '30px',
+        bottom: '8rem',
         height: '50px',
         width: '50px',
         background: 'rgb(76, 182, 76)',

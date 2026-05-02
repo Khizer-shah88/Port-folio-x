@@ -8,7 +8,7 @@ const person = {
   },
   role: "Full-Stack Developer",
   avatar: "/images/avatar.jpg",
-  location: "Asia/Karachi", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
+  location: "Asia/Islamabad", // Expecting the IANA time zone identifier, e.g., 'Europe/Vienna'
   languages: ["English",], // optional: Leave the array empty if you don't want to display languages
 };
 
@@ -25,7 +25,7 @@ const newsletter = {
 
 const social = [
   // Links are automatically displayed.
-  // Import new icons in /once-ui/icons.ts
+  // Import new icons in src/once-ui/icons.ts
   {
     name: "GitHub",
     icon: "github",
@@ -34,7 +34,7 @@ const social = [
   {
     name: "LinkedIn",
     icon: "linkedin",
-    link: "https://www.linkedin.com/company/once-ui/",
+    link: "https://www.linkedin.com/in/khizer-shah-418744355",
   },
   {
     name: "X",
@@ -44,7 +44,7 @@ const social = [
   {
     name: "Email",
     icon: "email",
-    link: "khizershah493@gmail.com",
+    link: "mailto:khizershah493@gmail.com",
   },
 ];
 
@@ -81,35 +81,38 @@ const about = {
     title: "Introduction",
     description: (
       <>
-        Khizer is a  Full stack Developer/engineer with a passion for transforming complex challenges
-        into simple, elegant design solutions. with REACT , NEXTJS  work spans digital interfaces, interactive
-        experiences, and the convergence of design and technology.
+        Iam  a full-stack developer, DevOps engineer, and UI designer focused on shipping polished,
+        scalable products. I builds modern web apps, automates deployment workflows, and shapes interfaces
+        that stay fast, accessible, and intuitive across devices.
       </>
     ),
   },
   work: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Work Experience",
     experiences: [
       {
         company: "_",
-        timeframe: "2022 - Present",
-        role: "Senior Full-Stack developer/Engineer",
+        timeframe: "2023 - Present",
+        role: "Senior Full-Stack Developer/DevOps Engineer",
         achievements: [
           <>
-             Creating a fullstack app / webapp or website etc or Redesigned the UI/UX for the  platform, resulting in a 20% increase in user
-            engagement and 30% faster load times.
+            Architected and deployed full-stack applications using Next.js, Node.js, and PostgreSQL with Prisma ORM,
+            resulting in faster query performance and clearer system scalability.
           </>,
           <>
-            Spearheaded the integration of AI tools into design workflows, enabling designers to
-            iterate 50% faster.
+            Implemented CI/CD pipelines and containerized applications using Docker and Kubernetes on AWS,
+            reducing deployment time and manual release work.
+          </>,
+          <>
+            Integrated Firebase and Supabase for real-time data synchronization, enabling seamless user experiences
+            across web and mobile platforms.
           </>,
         ],
         images: [
-          // optional: leave the array empty if you don't want to display images
           {
-            src: "/images/projects/project-01/cover-01.jpg",
-            alt: "Once UI Project",
+            src: "/images/projects/project-01/cover-04.jpg",
+            alt: "DevOps dashboard",
             width: 16,
             height: 9,
           },
@@ -118,23 +121,33 @@ const about = {
       {
         company: "Creativ3",
         timeframe: "2018 - 2022",
-        role: "Lead Designer",
+        role: "Full-Stack Developer and UI Engineer",
         achievements: [
           <>
-            Developed a design system that unified the brand across multiple platforms, improving
-            design consistency by 40%.
+            Built backend services using NestJS and optimized PostgreSQL databases, improving API response times and reliability.
           </>,
           <>
-            Led a cross-functional team to launch a new product line, contributing to a 15% increase
-            in overall company revenue.
+            Shipped responsive UI layers and design-system-driven interfaces that kept product behavior consistent
+            across desktop and mobile screens.
+          </>,
+          <>
+            Managed IoT device integrations using ESP8266/ESP32 modules with cloud connectivity, enabling real-time
+            data collection and monitoring.
           </>,
         ],
-        images: [],
+        images: [
+          {
+            src: "/images/projects/project-01/cover-01.jpg",
+            alt: "Responsive UI system",
+            width: 16,
+            height: 9,
+          },
+        ],
       },
     ],
   },
   studies: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Studies",
     institutions: [
       {
@@ -148,38 +161,46 @@ const about = {
     ],
   },
   technical: {
-    display: true, // set to false to hide this section
+    display: true,
     title: "Technical skills",
     skills: [
       {
-        title: "Figma",
-        description: <>Able to prototype in Figma with Once UI with unnatural speed.</>,
-        // optional: leave the array empty if you don't want to display images
+        title: "Backend & Database",
+        description: <>NestJS, Node.js, PostgreSQL, Prisma ORM, Firebase, Supabase.</>,
         images: [
           {
             src: "/images/projects/project-01/cover-02.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
-          },
-          {
-            src: "/images/projects/project-01/cover-03.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            alt: "Backend & Database",
           },
         ],
       },
       {
-        title: "Next.js",
-        description: <>Building next gen apps with Next.js </>,
-        // optional: leave the array empty if you don't want to display images
+        title: "Frontend & UI",
+        description: <>React, Next.js, TypeScript, Tailwind CSS, accessibility, and responsive design.</>,
+        images: [
+          {
+            src: "/images/cover.png",
+            alt: "Frontend and UI design",
+          },
+        ],
+      },
+      {
+        title: "DevOps & Cloud",
+        description: <>AWS (EC2, S3, RDS, Lambda), Docker, Kubernetes, CI/CD pipelines, GitHub Actions.</>,
+        images: [
+          {
+            src: "/images/projects/project-01/cover-03.jpg",
+            alt: "DevOps & Cloud",
+          },
+        ],
+      },
+      {
+        title: "UI Design",
+        description: <>Figma, design systems, prototypes, wireframes, and handoff-ready UI specs.</>,
         images: [
           {
             src: "/images/projects/project-01/cover-04.jpg",
-            alt: "Project image",
-            width: 16,
-            height: 9,
+            alt: "UI Design",
           },
         ],
       },
@@ -203,83 +224,4 @@ const work = {
   // All projects will be listed on the /home and /work routes
 };
 
-const gallery = {
-  label: "Gallery",
-  title: "My photo gallery",
-  description: `A photo collection by ${person.name}`,
-  // Images from https://pexels.com
-  images: [
-    {
-      src: "/images/gallery/img-01.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-02.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-03.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-04.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-05.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-06.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-07.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-08.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-09.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-10.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-11.jpg",
-      alt: "image",
-      orientation: "vertical",
-    },
-    {
-      src: "/images/gallery/img-12.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-13.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-    {
-      src: "/images/gallery/img-14.jpg",
-      alt: "image",
-      orientation: "horizontal",
-    },
-  ],
-};
-
-export { person, social, newsletter, home, about, blog, work, gallery };
+export { person, social, newsletter, home, about, blog, work };

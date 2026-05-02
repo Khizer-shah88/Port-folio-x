@@ -26,7 +26,22 @@ const formatDate = (date: Date, timePicker: boolean) => {
     }),
   };
 
-  return date.toLocaleString("en-US", options);
+  try {
+    return new Intl.DateTimeFormat("en-US", options).format(date);
+  } catch {
+    const fallbackOptions: Intl.DateTimeFormatOptions = {
+      year: "numeric",
+      month: "short",
+      day: "numeric",
+      ...(timePicker && {
+        hour: "2-digit",
+        minute: "2-digit",
+        hour12: false,
+      }),
+    };
+
+    return new Intl.DateTimeFormat("en-US", fallbackOptions).format(date);
+  }
 };
 
 export const DateInput: React.FC<DateInputProps> = ({

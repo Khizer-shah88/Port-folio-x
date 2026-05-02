@@ -1,0 +1,39 @@
+---
+title: "BurgerBite — Full-Stack Food Delivery Platform"
+publishedAt: "2024-06-01"
+summary: "A scalable food delivery ecosystem with real-time order tracking, a secure admin panel, and microservices architecture deployed on AWS."
+images:
+  - "/images/projects/burgerbite/cover.png"
+team:
+  - name: "Khizer Shah"
+    role: "Full-Stack Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/khizer-shah-418744355"
+link: "http://burgerbite.duckdns.org"
+---
+
+## Overview
+
+BurgerBite is a production-grade food delivery platform that handles the full ordering lifecycle — from browsing the menu to real-time delivery tracking — with a robust admin panel for restaurant management.
+
+## Key Features
+
+- **Real-Time Order Tracking**: Customers can track their orders live, with status updates pushed via WebSockets from the backend through each stage of delivery.
+- **Secure Admin Panel**: Restaurant admins manage menus, orders, riders, and analytics through a dedicated protected dashboard.
+- **Microservices Architecture**: Decomposed into independent services (auth, orders, menu, notifications) deployed in Docker containers on AWS for improved fault tolerance and independent scaling.
+- **Payment & Auth Flow**: Secure JWT-based authentication with role-based access control for customers, admins, and delivery riders.
+
+## Technologies Used
+
+- **Next.js & Node.js** — Frontend and API layer for the customer-facing app and admin panel.
+- **MongoDB** — NoSQL database for flexible order and menu data storage.
+- **Docker & AWS EC2** — Containerized microservices deployed on AWS for scalable production hosting.
+- **WebSockets** — Real-time order status broadcasting.
+
+## Challenges and Learnings
+
+Coordinating inter-service communication between microservices without introducing tight coupling required implementing an event-driven approach. Managing distributed state for order tracking across services was solved using a shared message queue pattern.
+
+## Outcome
+
+BurgerBite is live at burgerbite.duckdns.org and handles real orders end-to-end. The microservices architecture makes it easy to scale individual services independently, and the admin panel gives complete operational control to restaurant management.

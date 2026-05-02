@@ -22,6 +22,8 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
   const [email, setEmail] = useState<string>("");
   const [error, setError] = useState<string>("");
   const [touched, setTouched] = useState<boolean>(false);
+  const [status, setStatus] = useState<"idle" | "loading" | "success" | "error">("idle");
+  const [statusMessage, setStatusMessage] = useState<string>("");
 
   const validateEmail = (email: string): boolean => {
     if (email === "") {
@@ -50,6 +52,30 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
     if (!validateEmail(email)) {
       setError("Please enter a valid email address.");
     }
+  };
+
+  const submit = async (formData: FormData) => {
+    setStatus("loading");
+    try {
+      const res = await fetch("/api/subscribe", {
+        method: "POST",
+        body: formData,
+      });
+      const json = await res.json();
+      if (res.ok && json.ok) {
+        setStatus("success");
+        setStatusMessage("Thanks — you’re subscribed!");
+        setEmail("");
+      } else {
+        setStatus("error");
+        setStatusMessage(json.error || json.warning || "Subscription failed");
+      }
+    } catch (e) {
+      setStatus("error");
+      setStatusMessage((e as Error).message || "Network error");
+    }
+    // keep UI state for a moment, then reset touched
+    setTouched(false);
   };
 
   return (
@@ -136,6 +162,13 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
         method="post"
         id="mc-embedded-subscribe-form"
         name="mc-embedded-subscribe-form"
+        onSubmit={async (e) => {
+          e.preventDefault();
+          const fd = new FormData(e.currentTarget as HTMLFormElement);
+          // include EMAIL field if missing
+          if (!fd.get("EMAIL") && email) fd.set("EMAIL", email);
+          await submit(fd);
+        }}
       >
         <Flex id="mc_embed_signup_scroll" fillWidth maxWidth={24} gap="8">
           <Input
@@ -181,11 +214,21 @@ export const Mailchimp = ({ newsletter }: { newsletter: NewsletterProps }) => {
           </div>
           <div className="clear">
             <Flex height="48" vertical="center">
-              <Button id="mc-embedded-subscribe" value="Subscribe" size="m" fillWidth>
-                Subscribe
+              <Button id="mc-embedded-subscribe" value="Subscribe" size="m" fillWidth type="submit" disabled={status==="loading"}>
+                {status === "loading" ? "Subscribing…" : "Subscribe"}
               </Button>
             </Flex>
           </div>
+          {status === "success" && (
+            <div style={{ marginTop: 12 }} role="status">
+              <Text onBackground="neutral-medium">{statusMessage}</Text>
+            </div>
+          )}
+          {status === "error" && (
+            <div style={{ marginTop: 12 }} role="alert">
+              <Text onBackground="neutral-medium">{statusMessage}</Text>
+            </div>
+          )}
         </Flex>
       </form>
     </Column>

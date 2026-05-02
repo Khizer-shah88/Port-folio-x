@@ -5,7 +5,6 @@ const routes = {
   "/about": true,
   "/work": true,
   "/blog": true,
-  "/gallery": true,
 };
 
 // Enable password protection on selected routes
@@ -68,7 +67,7 @@ const display = {
 };
 
 const mailchimp = {
-  action: "https://url/subscribe/post?parameters",
+  action: "/api/subscribe",
   effects: {
     mask: {
       cursor: false,

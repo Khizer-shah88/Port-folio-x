@@ -40,31 +40,31 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-
     <>
     <Column maxWidth="m" gap="xl" horizontal="center">
-      <script
-        type="application/ld+json"
-        suppressHydrationWarning
-        dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            name: home.title,
-            description: home.description,
-            url: `https://${baseURL}`,
-            image: `${baseURL}/og?title=${encodeURIComponent(home.title)}`,
-            publisher: {
-              "@type": "Person",
-              name: person.name,
-              image: {
-                "@type": "ImageObject",
-                url: `${baseURL}${person.avatar}`,
+        <script
+          type="application/ld+json"
+          suppressHydrationWarning
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              name: home.title,
+              description: home.description,
+              url: `https://${baseURL}`,
+              image: `${baseURL}/og?title=${encodeURIComponent(home.title)}`,
+              publisher: {
+                "@type": "Person",
+                name: person.name,
+                image: {
+                  "@type": "ImageObject",
+                  url: `${baseURL}${person.avatar}`,
+                },
               },
-            },
-          }),
-        }}
-      />
+            }),
+          }}
+        />
+
       <Column fillWidth paddingY="l" gap="m">
         <Column maxWidth="s">
           <RevealFx translateY="4" fillWidth horizontal="start" paddingBottom="m">
@@ -119,11 +119,9 @@ export default function Home() {
       {newsletter.display && <Mailchimp newsletter={newsletter} />}
     </Column>
 
-    
-<div className="fixed">
-<WhatsAppButton phoneNumber="+92 3173555632" />
-</div>
-
-</>
+      <div className="fixed right-4" style={{ bottom: "11rem", zIndex: 100 }}>
+        <WhatsAppButton phoneNumber="+92 3173555632" />
+      </div>
+    </>
   );
 }

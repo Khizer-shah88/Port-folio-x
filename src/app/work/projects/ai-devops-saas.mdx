@@ -1,0 +1,39 @@
+---
+title: "AI DevOps Engineer — SaaS Platform"
+publishedAt: "2025-01-01"
+summary: "An AI-driven SaaS platform that automates CI/CD pipeline generation and cloud infrastructure configuration using LLMs."
+images:
+  - "/images/projects/ai-devops-saas/cover.png"
+team:
+  - name: "Khizer Shah"
+    role: "Full-Stack Developer & DevOps Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/khizer-shah-418744355"
+link: "https://github.com/Khizer-shah88/Ai-Devops-OpsMate-SaaS"
+---
+
+## Overview
+
+An AI-powered SaaS platform that revolutionizes DevOps by automating the entire CI/CD pipeline generation and cloud infrastructure configuration process. Built to reduce manual setup time for engineering teams by leveraging Large Language Models.
+
+## Key Features
+
+- **AI-Driven Pipeline Generation**: Integrated LLMs to analyze code repositories and automatically generate optimized Dockerfiles, Nginx configurations, and GitHub Actions workflows tailored to each project's stack.
+- **Cloud Infrastructure Automation**: Automated provisioning and configuration of AWS infrastructure including EC2, RDS, and S3 using Infrastructure-as-Code principles.
+- **Subscription-Based Dashboard**: Built a multi-tenant subscription dashboard enabling teams to manage and monitor automated deployments across environments.
+- **Smart Repository Analysis**: The AI engine reads repository structure and detects frameworks, dependencies, and deployment targets to generate environment-specific configurations.
+
+## Technologies Used
+
+- **Next.js** — Full-stack framework for the SaaS dashboard and API routes.
+- **OpenAI API** — LLM integration for intelligent pipeline and Dockerfile generation.
+- **Docker & GitHub Actions** — Containerization and automated CI/CD workflow execution.
+- **AWS (EC2, S3, RDS)** — Cloud infrastructure hosting and deployment targets.
+
+## Challenges and Learnings
+
+The biggest challenge was making LLM outputs reliable and production-safe. Implemented strict validation layers and retry logic around AI-generated configs, along with sandboxed test runs before applying changes to live environments.
+
+## Outcome
+
+Reduced manual deployment setup time by over 70% in tested scenarios. The platform subscriptions model allows teams to onboard in minutes with zero prior DevOps knowledge, with the AI handling the complexity under the hood.

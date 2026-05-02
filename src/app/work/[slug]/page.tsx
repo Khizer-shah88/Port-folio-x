@@ -117,8 +117,8 @@ export default function Project({ params }: WorkParams) {
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <Flex gap="12" marginBottom="24" vertical="center">
           {post.metadata.team && <AvatarGroup reverse avatars={avatars} size="m" />}
-          <Text variant="body-default-s" onBackground="neutral-weak">
-            {formatDate(post.metadata.publishedAt)}
+          <Text variant="body-default-s" onBackground="neutral-weak"> 
+            {formatDate(post.metadata.publishedAt)} 
           </Text>
         </Flex>
         <CustomMDX source={post.content} />

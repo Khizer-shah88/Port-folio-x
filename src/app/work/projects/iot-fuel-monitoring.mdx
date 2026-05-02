@@ -1,0 +1,39 @@
+---
+title: "IoT Fuel Monitoring & Real-Time Analytics"
+publishedAt: "2024-09-01"
+summary: "An end-to-end IoT system for real-time fuel nozzle monitoring and transaction logging using ESP8266, NestJS, and PostgreSQL."
+images:
+  - "/images/projects/iot-fuel-monitor/cover.png"
+team:
+  - name: "Khizer Shah"
+    role: "Full-Stack & IoT Engineer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/khizer-shah-418744355"
+link: "https://github.com/Khizer-shah88/Fuel_analyser"
+---
+
+## Overview
+
+A complete IoT solution for real-time fuel nozzle monitoring at pump stations. The system collects high-frequency sensor data from ESP-01 modules, processes it through a high-concurrency NestJS backend, and visualizes consumption patterns for pump operators through a live dashboard.
+
+## Key Features
+
+- **Custom ESP-01 Firmware**: Engineered firmware for ESP8266 (ESP-01) modules to handle high-frequency data transmission via serial communication to the cloud backend with minimal packet loss.
+- **Real-Time Data Pipeline**: Built a high-concurrency NestJS backend that processes sensor readings in real time, storing structured transaction data in PostgreSQL via Prisma ORM.
+- **Live Analytics Dashboard**: Visualizes fuel consumption patterns, transaction history, and nozzle health status across multiple pump stations simultaneously.
+- **Arduino Integration**: Bridged Arduino-based hardware sensors with the ESP-01 radio module for seamless physical-to-cloud data flow.
+
+## Technologies Used
+
+- **ESP8266 (ESP-01) & Arduino** — Embedded hardware for sensor data collection and wireless transmission.
+- **NestJS & Prisma ORM** — High-performance backend with typed database access.
+- **PostgreSQL** — Relational database for structured transaction and sensor logging.
+- **WebSockets** — For real-time dashboard data streaming.
+
+## Challenges and Learnings
+
+Handling high-frequency sensor bursts without data loss required implementing a buffered queue at the ESP-01 firmware level and an optimized bulk-insert strategy on the NestJS side. Serial communication reliability was improved with error-correction and reconnection logic.
+
+## Outcome
+
+The system successfully monitors multiple fuel nozzles simultaneously with sub-second latency on data updates. Transaction logs are accurate and auditable, giving pump operators full visibility into fuel flow and system health in real time.

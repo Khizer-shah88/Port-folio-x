@@ -1,0 +1,40 @@
+---
+title: "Drive Hub — Cross-Platform Car Rental App"
+publishedAt: "2024-03-01"
+summary: "A cross-platform React Native car rental app with real-time availability, location-based search powered by Google Maps, and Firebase backend."
+images:
+  - "/images/projects/drivehub/cover.png"
+team:
+  - name: "Khizer Shah"
+    role: "Mobile Developer"
+    avatar: "/images/avatar.jpg"
+    linkedIn: "https://www.linkedin.com/in/khizer-shah-418744355"
+link: "https://github.com/Khizer-shah88/Drive-Hub"
+---
+
+## Overview
+
+Drive Hub is a cross-platform mobile application that enables users to search, book, and manage vehicle rentals with real-time availability and location-based browsing — built for both iOS and Android using React Native.
+
+## Key Features
+
+- **Location-Based Search**: Integrated Google Maps API to let users find available rental vehicles near them, with real-time map pin updates as availability changes.
+- **Real-Time Availability**: Firebase Realtime Database keeps vehicle availability in sync across all users without page refreshes or manual polling.
+- **Secure JWT Authentication**: Firebase Authentication provides cloud-hosted, secure user auth with JWT tokens, supporting email/password and social login flows.
+- **Redux State Management**: Centralized app state with Redux for predictable UI behavior across complex booking flows.
+- **Cross-Platform**: Single codebase runs natively on both iOS and Android with platform-optimized components.
+
+## Technologies Used
+
+- **React Native** — Cross-platform mobile framework targeting iOS and Android.
+- **Firebase** — Real-time database, cloud-hosted storage, and JWT authentication.
+- **Redux** — Centralized state management for booking and user session flows.
+- **Google Maps API** — Location-based vehicle search and interactive map display.
+
+## Challenges and Learnings
+
+Keeping real-time availability state consistent across concurrent users required designing Firebase listeners carefully to avoid race conditions during booking. Optimizing map rendering performance with large sets of pins was solved using marker clustering.
+
+## Outcome
+
+Drive Hub delivers a seamless booking experience on both platforms with real-time data accuracy. The app's location-first design significantly improves discovery of nearby vehicles, making the rental process faster and more intuitive.
